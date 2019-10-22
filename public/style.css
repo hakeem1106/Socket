@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#chat{
+    background-color: cadetblue;
+    height: 100vh;
+}
+
+#story{
+    background-color: coral;
+    height: 100vh;;
+}
+
+#root{
+    display: inline;
+}
