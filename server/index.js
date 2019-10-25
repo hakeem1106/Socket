@@ -17,16 +17,17 @@ io.on('connection', socket=>{
     socket.emit('new chat', 'welcome');
     const islander = require('../public/players/islander');
     const Player = new islander;
-    console.log(Player)
+    console.log(Player);
 
 });
 
 app.listen(port, ()=>{
-    console.log(`App server started on`)
+    console.log(`App server started on`);
 });
 
 server.listen(port2, ()=>{
-    console.log("server is on ")
+    console.log("server is on ");
+
 });
 
 

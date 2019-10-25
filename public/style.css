@@ -1,18 +1,26 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 #chat{
     background-color: cadetblue;
     height: 100vh;
+    display: flex;
+    width: 50%;
 }
 
 #story{
     background-color: coral;
-    height: 100vh;;
+    height: 100vh;
+    display: flex;
+    width: 50%;
 }
 
 #root{
-    display: inline;
+    display: flex;
+    flex-direction: row;
+
+    
 }
