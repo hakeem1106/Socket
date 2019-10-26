@@ -1,16 +1,16 @@
 const abilities =[ 
 
     {
-      name: "firstAid",
+      name: "First Aid Kit",
            usage: 50,
    },
    {
-   name: "hunting",
+   name: "hunt",
        usage: 60
    
    },
    {
-   name: "cooking",
+   name: "cook",
        usage: 40
    
    },
@@ -20,7 +20,7 @@ const abilities =[
    
    }, 
    {
-   name: "fighting",
+   name: "fight",
        strength: 70
    
 }]

@@ -11,6 +11,9 @@
     width: 50%;
 }
 
+#chatWindow{
+  box-sizing: content-box;
+}
 #story{
     background-color: coral;
     height: 100vh;
@@ -21,6 +24,20 @@
 #root{
     display: flex;
     flex-direction: row;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    padding: 0;
 
+}
+
+#message{
+    bottom: 0;
+    left:0;
+    right: 0;
     
+    position: absolute;
+    display: inline;
+    margin: 0;
+    padding: 0;
 }

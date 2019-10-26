@@ -13,13 +13,21 @@ const express = require('express'),
 app.use(express.static(pathName));
 
 io.on('connection', socket=>{
-    console.log('new user');
-    socket.emit('new chat', 'welcome');
     const islander = require('../public/players/islander');
     const Player = new islander;
+    console.log('new user');
     console.log(Player);
 
+    socket.emit('new player', `Welcome new Islander. You have washed up on shore with ${Player.item.name}\n and with the ability to ${Player.ability.name}.`);
+    
+    
+    socket.on('chat-message', FormData =>{
+        console.log(FormData)
+        socket.broadcast.emit('chat-message', FormData)
+    })
+
 });
+
 
 app.listen(port, ()=>{
     console.log(`App server started on`);
