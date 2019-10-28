@@ -1,16 +1,27 @@
+require('dotenv').config()
 const express = require('express'),
-    path= require('path'),
+          path= require('path'),
           app = express(),
           port = process.env.PORT || 3000,
-          port2 = process.env.PORT ||5000,
+          port2 = process.env.PORT2 || 5000,
+          port3 = process.env.PORT3 || 3001,
           server = require('http').Server(app),
           io = require('socket.io')(server),
-          pathName = path.join(__dirname, '/../public');
-
+          mongoose = require('mongoose'),
+          bodyParser = require('body-parser'),  
+          pathName = path.join(__dirname, '/../public'),
+          db = mongoose.connect(process.env.DATABASE_URL,{useNewUrlParser:true}),
+          router = express.Router();
 
           
 //Setting up server
 app.use(express.static(pathName));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}))
+app.use('/', router)
+app.get('*', (req,res)=>{
+    return (req,res)
+})
 
 io.on('connection', socket=>{
     const islander = require('../public/players/islander');
@@ -29,11 +40,14 @@ io.on('connection', socket=>{
 });
 
 
-app.listen(port, ()=>{
+app.listen(port, (err)=>{
+    if(err) throw err;
     console.log(`App server started on`);
 });
 
-server.listen(port2, ()=>{
+
+server.listen(port2, (err)=>{
+    if(err) throw err;
     console.log("server is on ");
 
 });
