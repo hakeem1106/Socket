@@ -21,8 +21,10 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use('/', router)
 app.get('*', (req,res)=>{
     return (req,res)
+
 })
 
+//Connection starts game and creates character
 io.on('connection', socket=>{
     const islander = require('../public/players/islander');
     const Player = new islander;

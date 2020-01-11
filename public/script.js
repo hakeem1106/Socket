@@ -5,8 +5,14 @@ const socket = io('http://localhost:5000'),
       storyWindow = document.getElementById('story');
 
 
+const plotNodes ={
+    id: 1,
+    text: "Your and 4 other Islanders have been stranded on a deserted island. There no other inhabitants. Only animals and plants."
+}
+
 socket.on('new player', (data)=>{
 showStory(data)
+
     
 });
 
@@ -29,7 +35,17 @@ showMessage=(formData)=>{
 }
 
 showStory=(data)=>{
-    const plot = document.createElement('div')
+    const plot = document.createElement('div')     
     plot.innerHTML= data
     storyWindow.append(plot)
+
+    
+
+
+
+}
+
+plotThickens=()=>{
+
+   
 }
